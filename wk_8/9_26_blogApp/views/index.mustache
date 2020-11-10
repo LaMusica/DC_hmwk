@@ -1,8 +1,8 @@
 <h1> Entries </h1>
 
 <form method="POST" action="/create-post">
-    <input type="text" placeholder="Title" name="title">
-    <input type="text" placeholder="Body" name="body">
+    <label><input type="text" placeholder="Title" name="title"></label>
+   <p><textarea type="text" placeholder="Body" name="body"></textarea></p>
     <button>Submit</button>
 </form>
 
@@ -10,8 +10,8 @@
 
 <ul>
 {{#blogEntries}}
-        <label>{{user_name}}, {{title}}</label>
-        <label>{{body}}</label>
+        <li><label>{{user_name}}, {{title}}</label>
+        <label>{{body}}</label></li>
         <input type="hidden" value="{{post_id}}" name="postID">
         <button>Delete</button>
 
