@@ -10,11 +10,16 @@
 
 <ul>
 {{#blogEntries}}
-        <li><label>{{user_name}}, {{title}}</label>
-        <label>{{body}}</label></li>
+    <form>
+
+        <li>
+        <label> <!--{{user_name}},--> {{title}}</label>
+        <p>{{body}}<p>
         <input type="hidden" value="{{post_id}}" name="postID">
         <button>Delete</button>
-
+        </li>
+   </form>
 {{/blogEntries}}
 
 </ul>
+

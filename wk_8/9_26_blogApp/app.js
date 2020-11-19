@@ -25,12 +25,14 @@ let blogEntry = [{
 
 */
 
+
+
 app.get('/' , (req,res) =>{
   //  db.any('SELECT * FROM blog_posts;')
       db.any('SELECT post_id,title, body FROM blog_post;')
 .then(blogs => {
 
-        res.render("index", {blogs:blogs})
+        res.render("index", {blogEntries:blogEntries})
 })
 
 });
@@ -44,7 +46,7 @@ app.post('/delete-post', (req,res)=> {
                 res.redirect('/');
         })
 
-})
+});
 
 app.post('/create-post', (req,res) => {
 
