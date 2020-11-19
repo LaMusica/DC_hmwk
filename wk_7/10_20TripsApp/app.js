@@ -18,6 +18,8 @@ app.engine('mustache', mustacheExpress());
 
 app.set('views', "./views");
 
+app.set('views engine', 'mustache');
+
 
 
 
