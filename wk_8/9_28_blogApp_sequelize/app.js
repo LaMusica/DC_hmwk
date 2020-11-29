@@ -36,6 +36,14 @@ post.save().then((savedPost) => {
 */
 
 
+/*
+
+        let dateAsString = "11/23/2020"
+        
+        let d = new Date(dateAsString)
+
+*/
+
 app.post('/create-post', (req,res) => {
     const title = req.body.title
     const body  = req.body.body
@@ -45,16 +53,15 @@ app.post('/create-post', (req,res) => {
 
     // Build Post Object
 
-    let post = models.Post.build({
+    let entry = models.Entry.build({
         title: title,
         body: body,
         date: date
 })
 
 
-
-    post.save().then((savedPost) => {
-        res.render('confirm')
+    entry.save().then((savedEntry) => {
+        res.render('confirm', savedEntry.dataValues)
     }).catch((error) => {
         res.render('error')
     })
